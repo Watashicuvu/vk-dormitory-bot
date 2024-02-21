@@ -370,7 +370,7 @@ async def subs_handler(message: Message):
 async def send_handler(message: Message):
    fromId = message.from_id
    ls = [data[3].to_list()[i] for i in range(len(data[3].to_list())) if data[6].to_list()[i] != 'permission' and int(data[6].to_list()[i]) == 1 ]
-   if fromId == 282418233:
+   if fromId == :
       for i in ls:
          try:
             await bot.api.messages.send(peer_id = i, \
@@ -459,7 +459,7 @@ async def mero_handler(message: Message):
 @bot.on.message(text = 'обнова')
 async def kinchRem(message: Message):
    fromId = message.from_id
-   if fromId == 282418233:
+   if fromId == :
       await message.answer('Таблицу кухонь обновляю...')   
       read_excel('raw kitch shed.xlsx')
       await sleep(1)
@@ -468,8 +468,8 @@ async def kinchRem(message: Message):
 @bot.on.message(text = 'субботник')
 async def helpHandler(message: Message):
    fromId = message.from_id
-   if fromId == 72381975 or fromId == 282418233 \
-   or fromId == 140234000 or fromId == 99815966:
+   if fromId ==  or fromId ==  \
+   or fromId ==  or fromId == :
       med = data[20].to_list()[0]
       listing = data[19].to_list()
       userList = data[3].to_list()
@@ -483,7 +483,7 @@ async def helpHandler(message: Message):
                await sleep(1)
                await bot.api.messages.send(peer_id = int(i), random_id = \
                              random.randint(-2147483648, 2147483647), message = 'У нас есть задание! Чтобы узнать подробности, \
-                                обратитесь к Альбине Рашидовне или спросите у старосты этажа.') 
+                                обратитесь к коменданту или спросите у старосты этажа.') 
                z+=1              
          except:
             pass           
@@ -503,7 +503,7 @@ async def sender(message: Message):
 @bot.on.message(text = 'эко')
 async def helpHandler(message: Message):
    fromId = message.from_id
-   if fromId == 282418233:
+   if fromId == :
       userList = data[3].to_list()
       await message.answer('Будет исполнено!')
       for i in userList: 
@@ -541,7 +541,7 @@ async def helpHandler(message: Message):
 async def helpHandler(message: Message):
    fromId = message.from_id
    await message.answer('Передано представителю студсовета')
-   await bot.api.messages.send(peer_id = 282418233, random_id = \
+   await bot.api.messages.send(peer_id = , random_id = \
                              random.randint(-2147483648, 2147483647), message = f'Ошибка у \n vk.com/id{fromId}')
 
 @bot.on.message(text = 'код')
@@ -652,7 +652,7 @@ async def ExtraDef(message: Message):
                   await sleep(0.7)                               
             except:
                await sleep(0.3)
-               await bot.api.messages.send(peer_id = 282418233, random_id = \
+               await bot.api.messages.send(peer_id = , random_id = \
                   random.randint(-2147483648, 2147483647), message = f'чекни {j}')     
   
 @bot.on.private_message(payload={'cmd':'eco'})
@@ -719,7 +719,7 @@ async def cancel_handler(message: Message):
 async def room_handler(message: Message):
     if message.text.isnumeric():
       try:
-         if len(choice(4,message.from_id)) != 0 or message.from_id == 72381975:
+         if len(choice(4,message.from_id)) != 0 or message.from_id == :
             await bot.api.messages.send(peer_id = message.from_id, \
                              random_id = random.randint(-2147483648, 2147483647), \
                              message = roomFind(cleaNum(message.text)))
@@ -760,16 +760,16 @@ async def before_my_task():
                await bot.api.messages.send(peer_id = int(j), random_id = \
                   random.randint(-2147483648, 2147483647), message = 'Не забудьте продежурить сегодня!')
                await sleep(0.7)
-               await bot.api.messages.send(peer_id = 282418233, random_id = \
+               await bot.api.messages.send(peer_id = , random_id = \
                   random.randint(-2147483648, 2147483647), message = j)
                await sleep(0.3)                               
             except:
                await sleep(0.3)
-               await bot.api.messages.send(peer_id = 282418233, random_id = \
+               await bot.api.messages.send(peer_id = , random_id = \
                   random.randint(-2147483648, 2147483647), message = f'чекни {j}')
 
    if now.day == now.daysinmonth and now.hour >= hour and now.hour < hour + 2:
-      ll = [205405844, 112083106, 332845674, 103954938, 215180035, 220977532]
+      ll = []
       #тут надо вручную id старост записать!
       for k in ll:   
          try:
